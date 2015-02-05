@@ -1,5 +1,5 @@
 class Country < ActiveRecord::Base
-  validates :name, :continent_id, presence: true
+  validates :name, :continent, presence: true
 
   belongs_to :continent
   has_many :user_countries, dependent: :destroy

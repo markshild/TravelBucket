@@ -1,14 +1,45 @@
-app = angular.module('app', [
-  'templates'
-]);
+angular
+.module('myApp', [
+'ngAnimate',
+'ui.router',
+'templates'
+])
+.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-
-
-app.config([
-  '$httpProvider', function ($httpProvider) {
-  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-}]);
-
-app.run(function () {
-    console.log 'angular app running'
+  /**
+  * Routes and States
+  */
+  $stateProvider
+  .state('home', {
+    url: '/hi',
+    templateUrl: 'home.html',
+    controller: 'HomeCtrl'
+  })// an abstract state that just serves as a
+  // parent for the below child states
+  .state('dashboard', {
+    abstract: true,
+    url: '/dashboard',
+    templateUrl: 'dashboard/layout.html'
+  })
+  // the default route when someone hits dashboard
+  .state('dashboard.one', {
+    url: '/one',
+    templateUrl: 'dashboard/one.html'
+  })
+  // this is /dashboard/two
+  .state('dashboard.two', {
+    url: '/two',
+    templateUrl: 'dashboard/two.html'
+  })
+  // this is /dashboard/three
+  .state('dashboard.three', {
+    url: '/three',
+    templateUrl: 'dashboard/three.html'
   });
+
+  // default fall back route
+  $urlRouterProvider.otherwise('/');
+
+  // enable HTML5 Mode for SEO
+  $locationProvider.html5Mode(true);
+});

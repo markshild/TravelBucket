@@ -1,8 +1,7 @@
 
-<div ng-app='app.exampleApp' ng-controller='ExampleCtrl'>
-  <p>Value from ExampleCtrl:</p>
-  <p>{{ exampleValue }}</p>
-</div>
+<div ng-app='myApp'>
+  <div ng-include="'navbar.html'"></div>
+  <div class="main-view-container" ui-view></div>
 <div>
   Hello
 </div>

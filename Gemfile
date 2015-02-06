@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', require: 'bcrypt'
 
+gem 'angular-rails-templates'
+gem 'bower-rails'
+
 group :development do
   gem 'spring'
   gem 'pry-rails'

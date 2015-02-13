@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require angular
 //= require angular-animate
-//= require angular-ui-router
+//= require angular-route
+//= require angular-resource
 //= require angular-rails-templates
-//= require_tree .
-//= require_tree ../templates
+//= require_tree ./angular-app
+//= require_tree ./templates

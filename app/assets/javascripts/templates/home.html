@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+      <h2>Hello {{name}}</h2>
+
+      Search: <input ng-model="query">
+
+
+      <ul class="countries">
+        <li ng-repeat="country in countries | filter:query"
+        class="country">
+
+        <p>{{country.name}} -- {{country.continent}}</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+</div>

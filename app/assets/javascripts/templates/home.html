@@ -1,6 +1,6 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
+<div class="yeah">
+  <div class="uhuh">
+    <div class="sidebar">
       <!--Sidebar content-->
       <h2>Hello {{name}}</h2>
 
@@ -12,8 +12,23 @@
         class="country">
 
         <p>{{country.name}} -- {{country.continent}}</p>
+        <button ng-click="addCountry(country)" ng-hide="country.visit">
+          I've Been Here!
+        </button>
+        <button ng-click="removeCountry(country)" ng-show="country.visit">
+          Oops, I haven't been here...
+        </button>
       </li>
     </ul>
+
+    <h3>Visited Countries</h3>
+    <ul class="visited">
+      <li ng-repeat="country in visited"
+      class="country">
+
+      <p>{{country.name}} -- {{country.continent}}</p>
+    </li>
+  </ul>
 
   </div>
 </div>

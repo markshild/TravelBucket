@@ -27,6 +27,7 @@ gem 'bcrypt', require: 'bcrypt'
 
 gem 'angular-rails-templates'
 gem 'bower-rails'
+gem 'ng-rails-csrf'
 
 group :development do
   gem 'spring'

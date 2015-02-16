@@ -16,5 +16,6 @@
 //= require angular-route
 //= require angular-resource
 //= require angular-rails-templates
+//= require ng-rails-csrf
 //= require_tree ./angular-app
 //= require_tree ./templates

@@ -29,9 +29,18 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
 
 myControllers.controller('leadersCtrl', ['$scope', '$routeParams', '$http',
 function($scope, $routeParams, $http) {
+  $scope.moduleState = 'top';
   $http.get('api/leaders').success(function(data) {
-    $scope.leaders = data;
+    $scope.top = data.top;
+    $scope.africa = data.africa;
+    $scope.asia = data.asia;
+    $scope.europe = data.europe;
+    $scope.namerica = data.namerica;
+    $scope.oceania = data.oceania;
+    $scope.samerica = data.samerica;
   });
-
+  $scope.changeView = function(continent) {
+    $scope.moduleState = continent;
+  };
 
 }]);

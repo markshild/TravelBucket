@@ -19,8 +19,8 @@ function($routeProvider) {
     controller: 'homeCtrl'
   }).
   when('/leaders', {
-    templateUrl: 'partials/leaders.html',
-    controller: 'leaderlCtrl'
+    templateUrl: 'leaders.html',
+    controller: 'leadersCtrl'
   }).
   otherwise({
     redirectTo: '/hi'

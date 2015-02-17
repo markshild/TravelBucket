@@ -57,10 +57,11 @@ function($scope, $routeParams, $http) {
     console.log(val);
     $('#world-map').vectorMap({
       map: 'world_mill_en',
+      backgroundColor: '#0000FF',
       series: {
         regions: [{
           values: val,
-          scale: { visited: '#C8EEFF'},
+          scale: { visited: '#0B6121'},
         }]
       },
     });

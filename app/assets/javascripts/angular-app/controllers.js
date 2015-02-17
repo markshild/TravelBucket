@@ -50,9 +50,21 @@ function($scope, $routeParams, $http) {
 
   $http.get('api/map').success(function(data) {
     $scope.visited = data.visited;
+    var val = {};
+    angular.forEach($scope.visited, function (code) {
+      val[code] = 'visited';
+    });
+    console.log(val);
+    $('#world-map').vectorMap({
+      map: 'world_mill_en',
+      series: {
+        regions: [{
+          values: val,
+          scale: { visited: '#C8EEFF'},
+        }]
+      },
+    });
   });
-  $scope.changeView = function(continent) {
-    $scope.moduleState = continent;
-  };
+
 
 }]);

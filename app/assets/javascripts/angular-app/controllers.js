@@ -19,7 +19,8 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
   }
 
   $scope.removeCountry = function (country) {
-    $http.delete('user_countries/1', {country_id: country.id}).success(function() {
+    console.log(country);
+    $http.delete('user_countries/1', {params: {country_id: country.id}}).success(function() {
       var idx = $scope.visited.indexOf(country);
       $scope.visited.splice(idx, 1);
       country.visit = false;

@@ -12,7 +12,7 @@ class UserCountriesController < ApplicationController
   end
 
   def destroy
-    @user_country = current_user.user_countries.find(country_id: params[:country_id])
+    @user_country = current_user.user_countries.find_by({country_id: params[:country_id]})
     @user_country.destroy
     render json: {}
   end

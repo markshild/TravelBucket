@@ -17,5 +17,6 @@
 //= require angular-resource
 //= require angular-rails-templates
 //= require ng-rails-csrf
+//= require_tree ./jquery-jvectormap-2.0.1
 //= require_tree ./angular-app
 //= require_tree ./templates

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     get "show" => "views#show"
     get "leaders" => "views#leaders"
+    get "map" => "views#map"
   end
 end

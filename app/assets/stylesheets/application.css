@@ -10,5 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-jvectormap-2.0.1.css
  */
  /*<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">*/

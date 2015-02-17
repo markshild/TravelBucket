@@ -3,6 +3,10 @@ class Api::ViewsController < ApplicationController
     @countries = Country.includes(:continent)
   end
 
+  def map
+    @visited = current_user.countries
+  end
+
   def leaders
     @top = User.select("users.name, COUNT(user_countries.id) AS number")
       .joins(:user_countries).group("users.name")

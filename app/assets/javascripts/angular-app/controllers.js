@@ -44,3 +44,15 @@ function($scope, $routeParams, $http) {
   };
 
 }]);
+
+myControllers.controller('mapCtrl', ['$scope', '$routeParams', '$http',
+function($scope, $routeParams, $http) {
+
+  $http.get('api/map').success(function(data) {
+    $scope.visited = data.visited;
+  });
+  $scope.changeView = function(continent) {
+    $scope.moduleState = continent;
+  };
+
+}]);

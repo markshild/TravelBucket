@@ -22,6 +22,10 @@ function($routeProvider) {
     templateUrl: 'leaders.html',
     controller: 'leadersCtrl'
   }).
+  when('/map', {
+    templateUrl: 'map.html',
+    controller: 'mapCtrl'
+  }).
   otherwise({
     redirectTo: '/hi'
   });

@@ -49,6 +49,7 @@ myControllers.controller('mapCtrl', ['$scope', '$routeParams', '$http',
 function($scope, $routeParams, $http) {
   $http.get('api/map').success(function(data) {
     $scope.visited = data.visited;
+    $scope.working = false;
     $scope.countryHash = data.countries
     // var val = {};
     // angular.forEach($scope.visited, function (code) {
@@ -71,18 +72,22 @@ function($scope, $routeParams, $http) {
         event.preventDefault();
       },
       onRegionClick: function(event, countryCode){
+        if ($scope.working) {
+          return;
+        }
+        $scope.working = true;
         var mapObject = $('#world-map').vectorMap('get','mapObject');
         console.log(mapObject.regions[countryCode].element.isSelected);
         if ($scope.visited.indexOf(countryCode) == -1) {
           $http.post('user_countries', {country_id: $scope.countryHash[countryCode]}).success(function() {
             $scope.visited.push(countryCode);
-            console.log('success')
+            $scope.working = false;
           });
         } else {
           $http.delete('user_countries/1', {params: {country_id: $scope.countryHash[countryCode]}}).success(function() {
             var idx = $scope.visited.indexOf(countryCode);
             $scope.visited.splice(idx, 1);
-            console.log('other');
+            $scope.working = false;
           });
 
         }

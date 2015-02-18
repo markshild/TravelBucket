@@ -79,8 +79,8 @@ function($scope, $routeParams, $http) {
             console.log('success')
           });
         } else {
-          $http.delete('user_countries/1', {params: {country_id: country.id}}).success(function() {
-            var idx = $scope.visited.indexOf(country);
+          $http.delete('user_countries/1', {params: {country_id: $scope.countryHash[countryCode]}}).success(function() {
+            var idx = $scope.visited.indexOf(countryCode);
             $scope.visited.splice(idx, 1);
             console.log('other');
           });

@@ -47,23 +47,43 @@ function($scope, $routeParams, $http) {
 
 myControllers.controller('mapCtrl', ['$scope', '$routeParams', '$http',
 function($scope, $routeParams, $http) {
-
   $http.get('api/map').success(function(data) {
     $scope.visited = data.visited;
-    var val = {};
-    angular.forEach($scope.visited, function (code) {
-      val[code] = 'visited';
-    });
-    console.log(val);
+    $scope.countryHash = data.countries
+    // var val = {};
+    // angular.forEach($scope.visited, function (code) {
+    //   val[code] = 'selected';
+    // });
     $('#world-map').vectorMap({
       map: 'world_mill_en',
+      regionsSelectable: true,
       backgroundColor: '#0000FF',
-      series: {
-        regions: [{
-          values: val,
-          scale: { visited: '#0B6121'},
-        }]
+      regionStyle: {
+        initial: {
+          fill: 'white'
+        },
+        selected: {
+          fill: '#0B6121'
+        }
       },
+      selectedRegions: $scope.visited,
+      onRegionSelected: function(event, countryCode, selected, regions){
+        if (selected) {
+          $http.post('user_countries', {country_id: $scope.countryHash[countryCode]}).success(function() {
+            $scope.visited.push(countryCode);
+            console.log('success')
+          });
+        } else {
+
+        }
+        if (window.localStorage) {
+          console.log(regions);
+          // window.localStorage.setItem(
+          //   'jvectormap-selected-regions',
+          //   JSON.stringify(map.getSelectedRegions())
+          // );
+        }
+      }
     });
   });
 

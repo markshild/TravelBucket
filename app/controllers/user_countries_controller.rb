@@ -7,7 +7,7 @@ class UserCountriesController < ApplicationController
       render json: {}
     else
 
-      render json: {error: "Error processing request"}
+      render json: {error: "Error processing request"}, status: 420
     end
   end
 

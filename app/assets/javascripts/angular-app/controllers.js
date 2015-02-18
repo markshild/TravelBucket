@@ -67,22 +67,26 @@ function($scope, $routeParams, $http) {
         }
       },
       selectedRegions: $scope.visited,
-      onRegionSelected: function(event, countryCode, selected, regions){
-        if (selected) {
+      onRegionSelected: function(event) {
+        event.preventDefault();
+      },
+      onRegionClick: function(event, countryCode){
+        var mapObject = $('#world-map').vectorMap('get','mapObject');
+        console.log(mapObject.regions[countryCode].element.isSelected);
+        if ($scope.visited.indexOf(countryCode) == -1) {
           $http.post('user_countries', {country_id: $scope.countryHash[countryCode]}).success(function() {
             $scope.visited.push(countryCode);
             console.log('success')
           });
         } else {
+          $http.delete('user_countries/1', {params: {country_id: country.id}}).success(function() {
+            var idx = $scope.visited.indexOf(country);
+            $scope.visited.splice(idx, 1);
+            console.log('other');
+          });
 
         }
-        if (window.localStorage) {
-          console.log(regions);
-          // window.localStorage.setItem(
-          //   'jvectormap-selected-regions',
-          //   JSON.stringify(map.getSelectedRegions())
-          // );
-        }
+
       }
     });
   });

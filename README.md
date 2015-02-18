@@ -1,2 +1,3 @@
-This is my angular app..
-I have just started it, and it doesn't have angular yet, but it will!
+Hello,
+
+This is my first real angular app, angular on rails. It is not live yet, as I am still working on it. Needs some major CSS and other issues as well. We will see...

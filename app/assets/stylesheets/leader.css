@@ -1,8 +1,24 @@
+.yeah {
+  position: relative;
+}
 .yeah h2 {
   text-align: center;
   display: block;
   padding: 5px;
   border: 1px solid black;
+}
+
+.yeah span {
+  float: left;
+  position: absolute;
+  top: 6px;
+}
+
+.yeah span a {
+  padding: 5px 8px;
+  background: blue;
+  border-radius: 3px;
+  color: white;
 }
 
 .yeah h3 {

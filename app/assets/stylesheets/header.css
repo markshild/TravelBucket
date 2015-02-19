@@ -1,0 +1,31 @@
+header {
+  display: block;
+  background-color: #ecf0f1;
+  color: #0B6121;
+  border-bottom: 1px solid grey;
+  font-size: 20px;
+}
+
+header a.logo {
+  float: left;
+  padding: 5px 10px;
+  display: block;
+  border-right: 1px solid black;
+}
+
+header li, header h6 {
+  float: right;
+  padding: 5px 5px;
+  display: block;
+  border-left: 1px solid black;
+}
+
+header form {
+  float: right;
+  padding: 5px 5px;
+  border-left: 1px solid black;
+}
+
+header form input:hover {
+  cursor: pointer;
+}

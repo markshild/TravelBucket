@@ -51,10 +51,6 @@ function($scope, $routeParams, $http) {
     $scope.visited = data.visited;
     $scope.working = false;
     $scope.countryHash = data.countries
-    // var val = {};
-    // angular.forEach($scope.visited, function (code) {
-    //   val[code] = 'selected';
-    // });
     $('#world-map').vectorMap({
       map: 'world_mill_en',
       regionsSelectable: true,

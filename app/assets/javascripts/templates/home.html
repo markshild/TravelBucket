@@ -1,11 +1,7 @@
-<div class="yeah">
-  <div class="uhuh">
+
+  <div class="uhuh group">
     <div class="sidebar">
-      <!--Sidebar content-->
-      <h2>Hello {{name}}</h2>
-      <a href="#/leaders">Current LeaderBoard</a>
-      <br>
-      Search: <input ng-model="query">
+      <input placeholder="Search Country Here" ng-model="query">
 
 
       <ul class="countries">
@@ -13,18 +9,23 @@
         class="country">
 
         <p>{{country.name}} -- {{country.continent}}</p>
-        <button ng-click="addCountry(country)" ng-hide="country.visit">
+        <button class="add" ng-click="addCountry(country)" ng-hide="country.visit">
           I've Been Here!
         </button>
-        <button ng-click="removeCountry(country)" ng-show="country.visit">
+        <button class="remove" ng-click="removeCountry(country)" ng-show="country.visit">
           Oops, I haven't been here...
         </button>
       </li>
     </ul>
-
+  </div>
+    <div class="visited">
+      <span>
+        <a href="#/leaders">Current LeaderBoard</a>
+        <a href="#/map">My Map</a>
+    </span>
     <h3>Visited Countries</h3>
     <ul class="visited">
-      <li ng-repeat="country in visited"
+      <li ng-repeat="country in visited | orderBy:'name'"
       class="country">
 
       <p>{{country.name}} -- {{country.continent}}</p>
@@ -32,5 +33,4 @@
   </ul>
 
   </div>
-</div>
 </div>

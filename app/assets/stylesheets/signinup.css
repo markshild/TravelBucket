@@ -1,0 +1,47 @@
+section.signback {
+}
+
+section.sign {
+  border: 1px solid black;
+  margin: 40px auto;
+  display: block;
+  width: 70%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+section.sign h2 {
+  ,argin: auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+section.sign label, section.sign input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+section.sign input {
+  padding: 5px 5px;
+  border-bottom: 2px solid grey;
+}
+
+input.button {
+  margin: auto;
+  background: #0B6121;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px grey;
+}
+
+input.button:hover {
+  cursor: pointer;
+}
+
+input.button:active {
+  position: relative;
+  top: 3px;
+  box-shadow: none;
+}

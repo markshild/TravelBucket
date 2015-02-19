@@ -26,6 +26,7 @@ header form {
   border-left: 1px solid black;
 }
 
+
 header form input:hover {
   cursor: pointer;
 }

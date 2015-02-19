@@ -1,0 +1,43 @@
+.yeah h2 {
+  text-align: center;
+  display: block;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.yeah h3 {
+  text-align: center;
+  display: block;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.buttons {
+  margin: auto;
+  display: block;
+  border: 2px solid grey;
+  text-align: center;
+}
+
+.buttons button {
+  background: #0B6121;
+  color: white;
+  padding: 5px 8px;
+  margin: 0;
+}
+
+table.leader {
+  vertical-align: center;
+  margin-top: 20px;
+}
+
+table.leader tr:first-child {
+  text-decoration: bold;
+  font-size: 18px;
+}
+
+td {
+  border: 1px solid black;
+  margin: 0;
+  padding: 3px 5px;
+}

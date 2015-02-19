@@ -1,72 +1,120 @@
 <div class="yeah">
-  <div class="uhuh">
     <h2>Leaderboards</h2>
-    <button ng-click="changeView('top')">World</button>
-    <button ng-click="changeView('africa')">Africa</button>
-    <button ng-click="changeView('asia')">Asia</button>
-    <button ng-click="changeView('europe')">Europe</button>
-    <button ng-click="changeView('namerica')">North America</button>
-    <button ng-click="changeView('oceania')">Oceania</button>
-    <button ng-click="changeView('samerica')">South America</button>
+    <div class="buttons">
+      <button ng-click="changeView('top')">World</button>
+      <button ng-click="changeView('africa')">Africa</button>
+      <button ng-click="changeView('asia')">Asia</button>
+      <button ng-click="changeView('europe')">Europe</button>
+      <button ng-click="changeView('namerica')">North America</button>
+      <button ng-click="changeView('oceania')">Oceania</button>
+      <button ng-click="changeView('samerica')">South America</button>
+    </div>
     <div ng-switch="moduleState">
       <div ng-switch-when="top">
-        <h3>World Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in top" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>World Leaderboard (193 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in top" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="africa">
-        <h3>Africa Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in africa" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>Africa Leaderboard (53 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in africa" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="asia">
-        <h3>Asia Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in asia" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>Asia Leaderboard (44 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in asia" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="europe">
-        <h3>Europe Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in europe" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>Europe Leaderboard (47 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in europe" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="namerica">
-        <h3>North America Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in namerica" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>North America Leaderboard (23 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in namerica" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="oceania">
-        <h3>Oceania Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in oceania" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>Oceania Leaderboard (14 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in oceania" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
       <div ng-switch-when="samerica">
-        <h3>South America Leaderboard</h3>
-        <ol class="leader">
-          <li ng-repeat="user in samerica" class="top">
-            <p>{{user.name}} -- {{user.number}} countries</p>
+        <h3>South America Leaderboard (12 Countries Total)</h3>
+        <table class="leader">
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Country Count</td>
+          </tr>
+          <tr ng-repeat="user in samerica" class="top">
+            <td>{{$index + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.number}}</td>
           </li>
-        </ol>
+        </table>
       </div>
     </div>
 
-
-</div>
 </div>

@@ -14,22 +14,29 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
   $scope.addCountry = function (country) {
 
     $http.post('user_countries', {country_id: country.id}).success(function() {
-      $scope.visited.push(country);
+      var add = true;
+      for (var i = 0;i<$scope.visited.length; i++) {
+        if ($scope.visited[i].id === country.id) {
+          add = false;
+        }
+      }
+      if (add) {
+        $scope.visited.push(country)
+      }
+
       country.visit = true;
     });
   }
 
   $scope.removeCountry = function (country) {
     $http.delete('user_countries/1', {params: {country_id: country.id}}).success(function() {
-      var idx = function () {
-        for (var i = 0;i<$scope.visited.length; i++) {
-          if ($scope.visited[i].name === country.name) {
-            return i;
-          }
+      for (var i = 0;i<$scope.visited.length; i++) {
+        if ($scope.visited[i].id === country.id) {
+          $scope.visited.splice(i, 1);
+          break;
         }
-        return null;
       }
-      $scope.visited.splice(idx, 1);
+
       country.visit = false;
     });
   }
@@ -92,7 +99,6 @@ function($scope, $routeParams, $http) {
           $http.delete('user_countries/1', {params: {country_id: $scope.countryHash[countryCode]}}).success(function() {
             var idx = $scope.visited.indexOf(countryCode);
             $scope.visited.splice(idx, 1);
-            $scope.$apply();
             $scope.working = false;
           });
 

@@ -15,6 +15,7 @@ end
 
 
 json.visited current_user.countries do |country|
-  json.extract! country, :name
+  json.extract! country, :name, :id
   json.continent country.continent.name
+  json.visit true
 end

@@ -9,5 +9,5 @@ json.countries do
 end
 
 json.visited do
-  json.array! @visited.collect{|v| countryhash[v.name]}
+  json.array! @visited.map{ |v| countryhash[v.name] }.compact
 end

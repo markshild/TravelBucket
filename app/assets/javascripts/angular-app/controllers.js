@@ -8,6 +8,7 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
     $scope.name = data.user;
     $scope.countries = data.countries;
     $scope.visited = data.visited;
+    console.log($scope.visited);
   });
 
   $scope.addCountry = function (country) {
@@ -20,7 +21,14 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
 
   $scope.removeCountry = function (country) {
     $http.delete('user_countries/1', {params: {country_id: country.id}}).success(function() {
-      var idx = $scope.visited.indexOf(country);
+      var idx = function () {
+        for (var i = 0;i<$scope.visited.length; i++) {
+          if ($scope.visited[i].name === country.name) {
+            return i;
+          }
+        }
+        return null;
+      }
       $scope.visited.splice(idx, 1);
       country.visit = false;
     });
@@ -39,7 +47,10 @@ function($scope, $routeParams, $http) {
     $scope.oceania = data.oceania;
     $scope.samerica = data.samerica;
   });
-  $scope.changeView = function(continent) {
+  $scope.changeView = function(event, continent) {
+    var $clicked = $(event.currentTarget);
+    $("button").removeClass("activeb");
+    $clicked.addClass("activeb");
     $scope.moduleState = continent;
   };
 
@@ -50,7 +61,8 @@ function($scope, $routeParams, $http) {
   $http.get('api/map').success(function(data) {
     $scope.visited = data.visited;
     $scope.working = false;
-    $scope.countryHash = data.countries
+    console.log($scope.visited);
+    $scope.countryHash = data.countries;
     $('#world-map').vectorMap({
       map: 'world_mill_en',
       regionsSelectable: true,
@@ -64,9 +76,6 @@ function($scope, $routeParams, $http) {
         }
       },
       selectedRegions: $scope.visited,
-      onRegionSelected: function(event) {
-        event.preventDefault();
-      },
       onRegionClick: function(event, countryCode){
         if ($scope.working) {
           return;
@@ -83,6 +92,7 @@ function($scope, $routeParams, $http) {
           $http.delete('user_countries/1', {params: {country_id: $scope.countryHash[countryCode]}}).success(function() {
             var idx = $scope.visited.indexOf(countryCode);
             $scope.visited.splice(idx, 1);
+            $scope.$apply();
             $scope.working = false;
           });
 

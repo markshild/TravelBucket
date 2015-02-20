@@ -28,6 +28,10 @@
   border: 1px solid black;
 }
 
+.buttons button.activeb {
+  background: grey;
+}
+
 .buttons {
   margin: auto;
   display: block;
@@ -44,7 +48,8 @@
 
 table.leader {
   vertical-align: center;
-  margin-top: 20px;
+  margin: 20px auto;
+  background: rgba(0,0,0,.3);
 }
 
 table.leader tr:first-child {

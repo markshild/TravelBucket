@@ -5,16 +5,16 @@
   </span>
     <h2>Leaderboards</h2>
     <div class="buttons">
-      <button ng-click="changeView('top')">World</button>
-      <button ng-click="changeView('africa')">Africa</button>
-      <button ng-click="changeView('asia')">Asia</button>
-      <button ng-click="changeView('europe')">Europe</button>
-      <button ng-click="changeView('namerica')">North America</button>
-      <button ng-click="changeView('oceania')">Oceania</button>
-      <button ng-click="changeView('samerica')">South America</button>
+      <button class="activeb" ng-click="changeView($event, 'top')">World</button>
+      <button ng-click="changeView($event, 'africa')">Africa</button>
+      <button ng-click="changeView($event, 'asia')">Asia</button>
+      <button ng-click="changeView($event, 'europe')">Europe</button>
+      <button ng-click="changeView($event, 'namerica')">North America</button>
+      <button ng-click="changeView($event, 'oceania')">Oceania</button>
+      <button ng-click="changeView($event, 'samerica')">South America</button>
     </div>
-    <div ng-switch="moduleState">
-      <div ng-switch-when="top">
+    <div class="rel" ng-switch="moduleState">
+      <div class="board" ng-switch-when="top">
         <h3>World Leaderboard (193 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -29,7 +29,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="africa">
+      <div class="board" ng-switch-when="africa">
         <h3>Africa Leaderboard (53 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -44,7 +44,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="asia">
+      <div class="board" ng-switch-when="asia">
         <h3>Asia Leaderboard (44 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -59,7 +59,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="europe">
+      <div class="board" ng-switch-when="europe">
         <h3>Europe Leaderboard (47 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -74,7 +74,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="namerica">
+      <div class="board" ng-switch-when="namerica">
         <h3>North America Leaderboard (23 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -89,7 +89,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="oceania">
+      <div class="board" ng-switch-when="oceania">
         <h3>Oceania Leaderboard (14 Countries Total)</h3>
         <table class="leader">
           <tr>
@@ -104,7 +104,7 @@
           </li>
         </table>
       </div>
-      <div ng-switch-when="samerica">
+      <div class="board" ng-switch-when="samerica">
         <h3>South America Leaderboard (12 Countries Total)</h3>
         <table class="leader">
           <tr>

@@ -8,7 +8,6 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
     $scope.name = data.user;
     $scope.countries = data.countries;
     $scope.visited = data.visited;
-    console.log($scope.visited);
   });
 
   $scope.addCountry = function (country) {
@@ -68,7 +67,6 @@ function($scope, $routeParams, $http) {
   $http.get('api/map').success(function(data) {
     $scope.visited = data.visited;
     $scope.working = false;
-    console.log($scope.visited);
     $scope.countryHash = data.countries;
     $('#world-map').vectorMap({
       map: 'world_mill_en',
@@ -89,7 +87,6 @@ function($scope, $routeParams, $http) {
         }
         $scope.working = true;
         var mapObject = $('#world-map').vectorMap('get','mapObject');
-        console.log(mapObject.regions[countryCode].element.isSelected);
         if ($scope.visited.indexOf(countryCode) == -1) {
           $http.post('user_countries', {country_id: $scope.countryHash[countryCode]}).success(function() {
             $scope.visited.push(countryCode);

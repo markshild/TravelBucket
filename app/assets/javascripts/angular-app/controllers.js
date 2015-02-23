@@ -5,6 +5,7 @@ var myControllers = angular.module('myControllers', ['ng-rails-csrf']);
 
 myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http) {
   $http.get('api/show').success(function(data) {
+    $(window).off("resize");
     $scope.name = data.user;
     $scope.countries = data.countries;
     $scope.visited = data.visited;
@@ -43,6 +44,7 @@ myControllers.controller('homeCtrl', ['$scope', '$http', function($scope, $http)
 
 myControllers.controller('leadersCtrl', ['$scope', '$routeParams', '$http',
 function($scope, $routeParams, $http) {
+  $(window).off("resize");
   $scope.moduleState = 'top';
   $http.get('api/leaders').success(function(data) {
     $scope.top = data.top;

@@ -39,7 +39,7 @@
 }
 
 .view-frame.ng-enter, .view-frame.ng-leave, .board.ng-enter, .board.ng-leave {
-  background: white;
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;

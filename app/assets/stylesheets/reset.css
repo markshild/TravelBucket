@@ -25,6 +25,11 @@ ul {
   list-style: none;
 }
 
+body {
+  background: #ecf0f1;
+  min-width: 500px;
+}
+
 /*clearfix for floated elements*/
 .group:after {
   content: '';

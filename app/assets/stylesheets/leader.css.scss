@@ -1,4 +1,9 @@
-.yeah {
+div.yeah {
+  background-image: url('world.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  color: #ecf0f1;
   position: relative;
 }
 .yeah h2 {
@@ -16,7 +21,7 @@
 
 .yeah span a {
   padding: 5px 8px;
-  background: blue;
+  background: grey;
   border-radius: 3px;
   color: white;
 }
@@ -25,7 +30,7 @@
   text-align: center;
   display: block;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid yellow;
 }
 
 .buttons button.activeb {
@@ -46,6 +51,10 @@
   margin: 0;
 }
 
+.buttons button:hover {
+  cursor: pointer;
+}
+
 table.leader {
   vertical-align: center;
   margin: 20px auto;
@@ -58,7 +67,7 @@ table.leader tr:first-child {
 }
 
 td {
-  border: 1px solid black;
+  border: 1px solid yellow;
   margin: 0;
   padding: 3px 5px;
 }

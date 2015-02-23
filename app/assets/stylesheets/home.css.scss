@@ -13,6 +13,7 @@ ul.countries {
   overflow: scroll;
   height: 400px;
   border: 1px solid black;
+  margin: none;
 }
 
 li.country {
@@ -22,10 +23,6 @@ li.country {
 
 li.country:nth-child(odd) {
   background: lightgray;
-}
-
-li.country p {
-
 }
 
 li.country button {
@@ -60,7 +57,7 @@ div.visited span {
 
 div.visited span a {
   margin: 0 5px;
-  background: #0000FF;
+  background: grey;
   color: white;
   border-radius: 5px;
   padding: 5px 8px;

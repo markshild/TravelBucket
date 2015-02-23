@@ -13,3 +13,23 @@ div.map {
   background: yellow;
   height: 100%;
 }
+
+.sure span {
+  float: left;
+  position: absolute;
+  top: 6px;
+}
+
+.sure span a {
+  padding: 5px 8px;
+  background: grey;
+  border-radius: 3px;
+  color: white;
+}
+
+.sure h3 {
+  text-align: center;
+  display: block;
+  padding: 5px;
+  border: 1px solid yellow;
+}

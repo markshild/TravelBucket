@@ -9,6 +9,22 @@ div.visited {
   width: 59%;
 }
 
+::-webkit-input-placeholder {
+  color: #5C5D5E;
+}
+
+:-moz-placeholder {
+  color: #5C5D5E;
+}
+
+:-moz-placeholder {
+  color: #5C5D5E;
+}
+
+::-ms-input-placeholder {
+  color: #5C5D5E;
+}
+
 ul.countries {
   overflow: scroll;
   height: 400px;
